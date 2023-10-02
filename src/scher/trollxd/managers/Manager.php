@@ -14,4 +14,3 @@ class Manager {
 		return $this->getAntiCheatPrefix() . str_replace("&", "§", Loader::getInstance()->getConfig()->get("anti-cheat-message"));
 	}
 }
-				
