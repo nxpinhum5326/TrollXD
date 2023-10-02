@@ -39,7 +39,6 @@ class Loader extends PluginBase {
 		return $this->manager;
 	}
 	
-	
 	public static function getInstance(): Loader {
 		return self::$instance;
 	}
