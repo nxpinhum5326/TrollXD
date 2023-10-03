@@ -9,7 +9,7 @@ use scher\trollxd\managers\TrollManager;
 
 class Loader extends PluginBase {
 
-	private static Loader $instance;
+	protected static Loader $instance;
 
 	public $freezePlayers = [];
 
@@ -24,7 +24,7 @@ class Loader extends PluginBase {
 	}
 
 	protected function onEnable(): void {
-		$this->getLogger()->info("usendim brother xd todo");
+		$this->getLogger()->info("TrollXD 1.0.0 is enabled, if you have a suggestion or smt. reach out to @nepinhum discord user!");
 
 		$this->getServer()->getCommandMap()->register("troll",  new TrollCmd());
 
@@ -38,7 +38,6 @@ class Loader extends PluginBase {
 	public function getManager(): Manager {
 		return $this->manager;
 	}
-	
 	public static function getInstance(): Loader {
 		return self::$instance;
 	}
