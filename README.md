@@ -7,3 +7,5 @@
 ## Troll Functions - ✨
 
 ## TOdo List - 📝
+- [ ] The problems mentioned by jasonw4431 will be fixed(dammit)
+- [ ] New functions will be added
