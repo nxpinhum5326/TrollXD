@@ -11,9 +11,12 @@ use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 
 class Damage extends Troll {
+	private $damage;
 
 	public function __construct(
-		private readonly int $damage) {}
+		int $damage) {
+		$this->damage = $damage;
+	}
 
 	public function action(Player $trolled): void {
 		if ($trolled->isOnline()) {
