@@ -5,4 +5,9 @@ branches:
 projects:
   TrollXD:
     path: ""
+    libs:
+      - src: dktapps-pm-pl/pmforms/pmforms
+        version: ^2.1.0
+    lint:
+      phpstan: false
 ...
