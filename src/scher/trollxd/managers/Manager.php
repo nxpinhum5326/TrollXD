@@ -4,13 +4,22 @@ namespace scher\trollxd\managers;
 
 use scher\trollxd\Loader;
 
-class Manager {
+use function str_contains;
+use function str_replace;
 
-	public function getAntiCheatPrefix(): string {
-		return str_replace("&", "§", Loader::getInstance()->getConfig()->get("anti-cheat-prefix"));
+class Manager {
+	public function getTrollMessage(string $trollName): ?string {
+		$config = Loader::getInstance()->getConfig();
+		$search = $config->getNested("messages.troll." . $trollName);
+
+		if ($search !== null) {
+			return str_contains($search, "&") ? str_replace("&", "§", $search) : $search;
+		}
+
+		return null;
 	}
 
-	public function getAntiCheatMessage(): string {
-		return $this->getAntiCheatPrefix() . str_replace("&", "§", Loader::getInstance()->getConfig()->get("anti-cheat-message"));
+	public function isKickEnabled(): bool {
+		return Loader::getInstance()->getConfig()->get("fakeban-kick");
 	}
 }

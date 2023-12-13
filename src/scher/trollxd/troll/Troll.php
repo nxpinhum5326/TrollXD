@@ -8,5 +8,6 @@ use pocketmine\scheduler\Task;
 abstract class Troll {
 
 	abstract public function action(Player $trolled): void;
+	abstract public function getName(): string;
 
 }

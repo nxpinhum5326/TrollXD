@@ -8,13 +8,8 @@ use scher\trollxd\managers\Manager;
 use scher\trollxd\managers\TrollManager;
 
 class Loader extends PluginBase {
-
 	protected static Loader $instance;
-
-	public $freezePlayers = [];
-
 	private TrollManager $trollManager;
-
 	private Manager $manager;
 
 	protected function onLoad(): void {
@@ -24,11 +19,16 @@ class Loader extends PluginBase {
 	}
 
 	protected function onEnable(): void {
-		$this->getLogger()->info("TrollXD 1.0.0 is enabled, if you have a suggestion or smt. reach out to @nepinhum discord user!");
-
-		$this->getServer()->getCommandMap()->register("troll",  new TrollCmd());
-
+		$this->getServer()->getCommandMap()->register("trollxd", new TrollCmd($this));
 		$this->saveDefaultConfig();
+	}
+
+	public function getError(string $type): string {
+		return match ($type) {
+			"command" => str_replace("{this}", "TrollXD", $this->getConfig()->getNested("messages.error.command")),
+			"player-offline" => $this->getConfig()->getNested("messages.error.player-offline"),
+			default => 'Error type, not found.',
+		};
 	}
 
 	public function getTrollManager(): TrollManager {
@@ -38,6 +38,7 @@ class Loader extends PluginBase {
 	public function getManager(): Manager {
 		return $this->manager;
 	}
+
 	public static function getInstance(): Loader {
 		return self::$instance;
 	}
