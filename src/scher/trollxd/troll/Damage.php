@@ -13,7 +13,7 @@ use pocketmine\utils\TextFormat;
 class Damage extends Troll {
 
 	public function __construct(
-		private readonly ?int $damage = null) {}
+		private readonly int $damage) {}
 
 	public function action(Player $trolled): void {
 		if ($trolled->isOnline()) {
@@ -22,10 +22,7 @@ class Damage extends Troll {
 	}
 
 	public function getDamage(): int {
-		if (isset($this->damage)) {
-			return $this->damage;
-		}else
-			return 1;
+		return $this->damage ?? 1;
 	}
 
 	public function getName(): string {
