@@ -22,7 +22,10 @@ class Damage extends Troll {
 	}
 
 	public function getDamage(): int {
-		return $this->damage ?? 1;
+		if (isset($this->damage)) {
+			return $this->damage;
+		}else
+			return 1;
 	}
 
 	public function getName(): string {
