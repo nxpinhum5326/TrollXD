@@ -13,6 +13,7 @@ class AntiCheat extends Troll {
 
 	public function action(Player $trolled): void {
 		if ($trolled->isOnline()) {
+			$trolled->sendTip(Loader::getInstance()->getManager()->getTrollMessage($this->getName()));
 			$trolled->sendMessage(Loader::getInstance()->getManager()->getTrollMessage($this->getName()));
 		}
 	}

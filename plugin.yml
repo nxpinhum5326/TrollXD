@@ -5,5 +5,5 @@ author: scher470
 main: scher\trollxd\Loader
 
 permissions:
-  troll.command.permission:
-    default: false
+  trollxd.command.permission:
+    default: op

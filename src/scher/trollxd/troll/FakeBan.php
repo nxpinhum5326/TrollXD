@@ -11,8 +11,7 @@ class FakeBan extends Troll {
 		$m = Loader::getInstance()->getManager()->getTrollMessage($this->getName());
 
 		if ($trolled->isOnline()) {
-			if (Loader::getInstance()->getManager()->isKickEnabled()) $trolled->kick($m, null, $m);
-			else $trolled->sendMessage($m);
+			$trolled->kick($m, null, $m);
 		}
     }
 

@@ -14,12 +14,12 @@ use scher\trollxd\forms\AdminTrollForm;
 use scher\trollxd\Loader;
 
 class TrollCmd extends Command implements PluginOwned {
-	private $plugin;
+	private Loader $plugin;
 
 	public function __construct(
 		 Loader $plugin
 	) {
-		$cfg = $this->plugin->getConfig();
+		$this->plugin = $plugin;
 
 		parent::__construct(
 			"trollxd",

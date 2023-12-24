@@ -4,12 +4,11 @@ namespace scher\trollxd\managers;
 
 use pocketmine\player\Player;
 use scher\trollxd\Loader;
-use scher\trollxd\troll\Freeze;
 use scher\trollxd\troll\Troll;
 
 class TrollManager {
 
-	private $plugin;
+	private Loader $plugin;
 
 	public function __construct(Loader $plugin) {
 		$this->plugin = $plugin;
@@ -25,5 +24,9 @@ class TrollManager {
 				$troll->action($trolled);
 			}
 		}
+	}
+
+	public function getPlugin(): Loader {
+		return $this->plugin;
 	}
 }

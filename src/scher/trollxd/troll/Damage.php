@@ -11,7 +11,7 @@ use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 
 class Damage extends Troll {
-	private $damage;
+	private int $damage;
 
 	public function __construct(
 		int $damage) {

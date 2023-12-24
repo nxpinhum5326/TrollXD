@@ -1,0 +1,8 @@
+messages:
+  troll:
+    fakeop: "§7You are now op!"
+    anticheat: "§cAntiCheatName §7> §fSuspicious activity detected!"
+    fakeban: "Banned by admin."
+  error:
+    command: "{this} command can only be used in the game."
+    player-offline: "§cPlayer is not online!"

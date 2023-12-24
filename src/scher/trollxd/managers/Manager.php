@@ -18,8 +18,4 @@ class Manager {
 
 		return null;
 	}
-
-	public function isKickEnabled(): bool {
-		return Loader::getInstance()->getConfig()->get("fakeban-kick");
-	}
 }
