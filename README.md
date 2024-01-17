@@ -12,4 +12,4 @@
 
 [![](https://poggit.pmmp.io/shield.state/TrollXD)](https://poggit.pmmp.io/p/TrollXD)
 
-<a href="https://poggit.pmmp.io/p/TrollXD"><img src="https://poggit.pmmp.io/shield.state/TrollXD"></a>
+[![](https://poggit.pmmp.io/shield.dl.total/TrollXD)](https://poggit.pmmp.io/p/TrollXD)
