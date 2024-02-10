@@ -8,7 +8,7 @@ use function str_contains;
 use function str_replace;
 
 class Manager {
-	public function getTrollMessage(string $trollName): ?string {
+	public function getTrollMessage(string $trollName): string {
 		$config = Loader::getInstance()->getConfig();
 		$search = $config->getNested("messages.troll." . $trollName);
 
@@ -16,6 +16,6 @@ class Manager {
 			return str_contains($search, "&") ? str_replace("&", "§", $search) : $search;
 		}
 
-		return null;
+		return ":(";
 	}
 }

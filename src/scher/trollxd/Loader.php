@@ -8,7 +8,7 @@ use scher\trollxd\managers\Manager;
 use scher\trollxd\managers\TrollManager;
 
 class Loader extends PluginBase {
-	protected static Loader $instance;
+	private static Loader $instance;
 	private TrollManager $trollManager;
 	private Manager $manager;
 
@@ -27,7 +27,7 @@ class Loader extends PluginBase {
 		return match ($type) {
 			"command" => str_replace("{this}", "TrollXD", $this->getConfig()->getNested("messages.error.command")),
 			"player-offline" => $this->getConfig()->getNested("messages.error.player-offline"),
-			default => 'Error type, not found.',
+			default => "Argument(type) can't be found.",
 		};
 	}
 

@@ -7,7 +7,6 @@ use scher\trollxd\Loader;
 use scher\trollxd\troll\Troll;
 
 class TrollManager {
-
 	private Loader $plugin;
 
 	public function __construct(Loader $plugin) {

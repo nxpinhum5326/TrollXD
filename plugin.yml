@@ -1,9 +1,9 @@
 name: TrollXD
-version: 1.0.0
+version: 1.2.0
 api: 5.0.0
 author: scher470
 main: scher\trollxd\Loader
 
 permissions:
   trollxd.command.permission:
-    default: op
+    default: true

@@ -7,8 +7,8 @@
 ## Troll Functions - ✨
 
 ## TOdo List - 📝
-- [ ] The problems mentioned by jasonw4431 will be fixed(dammit)
-- [ ] New functions will be added
+- [x] The problems mentioned by jasonw4431 will be fixed(dammit)
+- [x] New functions will be added
 
 [![](https://poggit.pmmp.io/shield.state/TrollXD)](https://poggit.pmmp.io/p/TrollXD)
 

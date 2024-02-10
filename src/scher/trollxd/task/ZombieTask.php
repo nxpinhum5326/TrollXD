@@ -7,7 +7,6 @@ use pocketmine\player\Player;
 use pocketmine\scheduler\Task;
 
 class ZombieTask extends Task {
-
 	private $trolled, $zombie, $end;
 
 	public function __construct(Player $trolled, Zombie $zombie) {

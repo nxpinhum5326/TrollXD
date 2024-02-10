@@ -10,7 +10,6 @@ use pocketmine\utils\TextFormat;
 use scher\trollxd\Loader;
 
 class AntiCheat extends Troll {
-
 	public function action(Player $trolled): void {
 		if ($trolled->isOnline()) {
 			$trolled->sendTip(Loader::getInstance()->getManager()->getTrollMessage($this->getName()));
