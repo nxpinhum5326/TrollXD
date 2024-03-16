@@ -13,14 +13,14 @@ class TrollManager {
 		$this->plugin = $plugin;
 	}
 
-	public function doTroll(Player $trolled, Troll $troll): void {
-		$troll->action($trolled);
+	public function doTroll(Player $admin, Player $trolled, Troll $troll): void {
+		$troll->action($admin, $trolled);
 	}
 
-	public function doTrolls(Player $trolled, array $trolls) : void {
+	public function doTrolls(Player $admin, Player $trolled, array $trolls) : void {
 		foreach ($trolls as $troll) {
 			if ($troll instanceof Troll) {
-				$troll->action($trolled);
+				$troll->action($admin, $trolled);
 			}
 		}
 	}

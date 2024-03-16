@@ -5,9 +5,11 @@ namespace scher\trollxd\troll;
 use pocketmine\player\Player;
 use scher\trollxd\entities\FakePrimedTNT;
 use scher\trollxd\Loader;
+use scher\trollxd\utils\Lang;
 
 class FakeTNT extends Troll {
-	public function action(Player $trolled): void {
+	public function action(Player $admin, Player $trolled): void {
+		parent::action($admin, $trolled);
 		if ($trolled->isOnline()) {
 			$trolled->sendMessage(Loader::getInstance()->getManager()->getTrollMessage($this->getName()));
 		}

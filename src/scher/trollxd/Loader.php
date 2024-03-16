@@ -6,6 +6,7 @@ use pocketmine\plugin\PluginBase;
 use scher\trollxd\cmd\TrollCmd;
 use scher\trollxd\managers\Manager;
 use scher\trollxd\managers\TrollManager;
+use scher\trollxd\utils\Lang;
 
 class Loader extends PluginBase {
 	private static Loader $instance;
@@ -14,21 +15,18 @@ class Loader extends PluginBase {
 
 	protected function onLoad(): void {
 		self::$instance = $this;
-		$this->trollManager = new TrollManager($this);
-		$this->manager = new Manager();
 	}
 
 	protected function onEnable(): void {
+		$this->trollManager = new TrollManager($this);
+		$this->manager = new Manager();
+
 		$this->getServer()->getCommandMap()->register("trollxd", new TrollCmd($this));
 		$this->saveDefaultConfig();
 	}
 
-	public function getError(string $type): string {
-		return match ($type) {
-			"command" => str_replace("{this}", "TrollXD", $this->getConfig()->getNested("messages.error.command")),
-			"player-offline" => $this->getConfig()->getNested("messages.error.player-offline"),
-			default => "Argument(type) can't be found.",
-		};
+	public function tl(string $key): string {
+		return Lang::translate($key);
 	}
 
 	public function getTrollManager(): TrollManager {

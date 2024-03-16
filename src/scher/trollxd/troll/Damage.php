@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace scher\trollxd\troll;
 
 use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\event\inventory\InventoryOpenEvent;
-use pocketmine\event\Listener;
 use pocketmine\player\Player;
-use pocketmine\utils\TextFormat;
 
 class Damage extends Troll {
 	private int $damage;
@@ -18,7 +15,8 @@ class Damage extends Troll {
 		$this->damage = $damage;
 	}
 
-	public function action(Player $trolled): void {
+	public function action(Player $admin, Player $trolled): void {
+		parent::action($admin, $trolled);
 		if ($trolled->isOnline()) {
 			$trolled->attack(new EntityDamageEvent($trolled, EntityDamageEvent::CAUSE_SUICIDE, $this->getDamage()));
 		}

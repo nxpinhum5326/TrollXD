@@ -2,7 +2,6 @@
 
 namespace scher\trollxd\troll;
 
-use pocketmine\entity\Zombie;
 use pocketmine\network\mcpe\NetworkBroadcastUtils;
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 use pocketmine\player\Player;
@@ -10,9 +9,9 @@ use scher\trollxd\entities\FakeZombie;
 use scher\trollxd\Loader;
 use scher\trollxd\task\ZombieTask;
 
-
 class ZombieSound extends Troll {
-	public function action(Player $trolled): void {
+	public function action(Player $admin, Player $trolled): void {
+		parent::action($admin, $trolled);
 		if ($trolled->isOnline()) {
 			$zombie = new FakeZombie($trolled->getLocation());
 			$zombie->spawnToAll();

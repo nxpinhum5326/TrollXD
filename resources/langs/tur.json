@@ -1,0 +1,23 @@
+{
+	"translations": {
+		"command.ingame": "&cBu komut sadece oyun içinde kullanılabilir.",
+		"command.player.offline": "&cOyuncu çevrimdışı!",
+
+		"message.troll.fakeop": "&7You are now op!",
+		"message.troll.anticheat": "&cAntiHileAdı &7> &fŞüpheli aktivite tespit edildi!",
+		"message.troll.fakeban": "Yönetici tarafından sınırsız olarak uzaklaştırıldın.",
+		"message.troll.faketnt": "&cÖleceksin...",
+
+		"form.troll.description": "Bir trol seç :troll_yüz:",
+		"form.troll.button.fakeop": "Sahte OP Mesajı",
+		"form.troll.button.fakeban": "Sahte Yasaklama(Ban)",
+		"form.troll.button.anticheat": "AntiHile Mesajı",
+		"form.troll.button.damage": "Damage - Kendi Kendine Zarar Verme",
+		"form.troll.button.faketnt": "Sahte TNT Patlaması(blokları kırmaz)",
+		"form.troll.button.zombie": "Akılsız Zombi :]",
+		"form.troll.button.flip": "Flip.hack xD",
+		"form.troll.button.crash": "Crash.lol (cidden, oyunu çökertiyor)",
+
+		"webhook.log": "Vay canına, bir trol vakası! {%admin}, {%trolled} kişisini {%trollName} ile trolledi!"
+	}
+}
