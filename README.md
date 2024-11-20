@@ -16,6 +16,9 @@
 * (the menu and texts can be changed, this is a preview. Also captured with the "English/en" language selected)
 ## TOdo List - 📝
 - [for 1.4.0(next release)](https://github.com/nxpinhum5326/TrollXD/blob/main/todolist/next-1.4.0.md)
+- [ ] Currently trolled players (For cancellation of troll at any time for unlimited trolls etc.)
+- [ ] Items(not in-game item :D) from the ‘real’ 1.4.0 ‘todolist’ that I didn't add because I was too lazy :P
+  - Again due to my laziness I released a completely irrelevant version called 1.3.1 with some features, eh... :D
 
 [![](https://poggit.pmmp.io/shield.state/TrollXD)](https://poggit.pmmp.io/p/TrollXD)
 

@@ -10,7 +10,7 @@ use pocketmine\world\Explosion;
 use pocketmine\world\Position;
 
 class FakePrimedTNT extends PrimedTNT{
-	//explodeA removed
+	//explodeA removed but still causes to damage
 	public function explode(): void{
 		$ev = new EntityPreExplodeEvent($this, 4);
 		$ev->call();

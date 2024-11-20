@@ -1,12 +1,16 @@
 {
 	"translations": {
 		"command.ingame": "&c{%this} command can only be used in the game.",
-		"command.player.offline": "&cPlayer is not online!",
+		"general.player.offline": "&cPlayer is not online!",
 
 		"message.troll.fakeop": "&7You are now op!",
 		"message.troll.anticheat": "&cAntiCheatName &7> &fSuspicious activity detected!",
 		"message.troll.fakeban": "Banned by admin.",
 		"message.troll.faketnt": "&cYou're going to die...",
+		"message.troll.invclear": "&eOops... where did your items go? Just kidding, they'll be back!",
+
+		"form.players.description": "Choose a player to troll",
+		"form.players.noplayers": "No players online.",
 
 		"form.troll.description": "Choose a troll :troll_face:",
 		"form.troll.button.fakeop": "FakeOP Message",
@@ -17,6 +21,7 @@
 		"form.troll.button.zombie": "ZombieSound.exe :]",
 		"form.troll.button.flip": "Flip.hack xD",
 		"form.troll.button.crash": "Crash.lol (seriously, it's crashing the game)",
+		"form.troll.button.invclear": "Temp Inventory Clear",
 
 		"webhook.log": "Woah, a troll case! {%admin} trolled {%trolled} with {%trollName}!"
 	}

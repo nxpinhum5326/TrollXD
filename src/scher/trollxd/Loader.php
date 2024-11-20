@@ -18,9 +18,8 @@ class Loader extends PluginBase {
 	}
 
 	protected function onEnable(): void {
-		$this->trollManager = new TrollManager($this);
-		$this->manager = new Manager();
-
+		$this->trollManager = TrollManager::getInstance();
+		$this->manager = Manager::getInstance();
 		$this->getServer()->getCommandMap()->register("trollxd", new TrollCmd($this));
 		$this->saveDefaultConfig();
 	}

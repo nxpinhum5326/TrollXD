@@ -8,6 +8,7 @@ use pocketmine\console\ConsoleCommandSender;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginOwned;
 use scher\trollxd\forms\AdminTrollForm;
+use scher\trollxd\forms\PlayersForm;
 use scher\trollxd\Loader;
 use scher\trollxd\utils\Lang;
 
@@ -31,6 +32,7 @@ class TrollCmd extends Command implements PluginOwned {
 
 	public function execute(CommandSender $sender, string $commandLabel, array $args): void {
 		$plugin = $this->getOwningPlugin();
+
 		if ($sender instanceof ConsoleCommandSender) {
 			$sender->sendMessage(Lang::translate("command.ingame", [
 				"this" => "'/trollxd'"
@@ -38,16 +40,21 @@ class TrollCmd extends Command implements PluginOwned {
 			return;
 		}
 
+		if(!$sender instanceof Player){
+			return;
+		}
+
 		if (!isset($args[0])) {
-			$sender->sendMessage($this->getUsage());
+			$sender->sendForm(new PlayersForm($sender, "TrollXD > Players"));
 			return;
 		}
 
 		$player = Loader::getInstance()->getServer()->getPlayerExact($args[0]);
-		if ($player instanceof Player and $player->isOnline()) {
+		if ($player instanceof Player && $player->isOnline()) {
 			$sender->sendForm(new AdminTrollForm($player, "Troll", "Choose a troll :troll_face:"));
-		}else
-			$sender->sendMessage(Lang::translate("command.player.offline"));
+		} else {
+			$sender->sendMessage(Lang::translate("general.player.offline"));
+		}
 	}
 
 	public function getOwningPlugin(): Loader {

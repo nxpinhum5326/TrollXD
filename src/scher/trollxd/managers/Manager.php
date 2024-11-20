@@ -3,12 +3,15 @@
 namespace scher\trollxd\managers;
 
 use pocketmine\player\Player;
+use pocketmine\Server;
+use pocketmine\utils\SingletonTrait;
 use scher\trollxd\Loader;
-
 use scher\trollxd\utils\Lang;
 use scher\trollxd\utils\WebhookAPI;
 
 class Manager {
+	use SingletonTrait;
+
 	public function __construct(){
 		$languages = Loader::getInstance()->getConfig()->get("languages");
 		foreach($languages as $language){
@@ -28,6 +31,18 @@ class Manager {
 				"trollName" => $trollName
 			]));
 		}
+	}
+
+	public function getOnlinePlayers(Player $admin): array {
+		$players = [];
+
+		foreach (Server::getInstance()->getOnlinePlayers() as $onlinePlayer) {
+			if ($onlinePlayer->getName() !== $admin->getName()) {
+				$players[] = $onlinePlayer->getName();
+			}
+		}
+
+		return $players;
 	}
 
 	public function getTrollMessage(string $trollName): string {

@@ -3,15 +3,11 @@
 namespace scher\trollxd\managers;
 
 use pocketmine\player\Player;
-use scher\trollxd\Loader;
+use pocketmine\utils\SingletonTrait;
 use scher\trollxd\troll\Troll;
 
 class TrollManager {
-	private Loader $plugin;
-
-	public function __construct(Loader $plugin) {
-		$this->plugin = $plugin;
-	}
+	use SingletonTrait;
 
 	public function doTroll(Player $admin, Player $trolled, Troll $troll): void {
 		$troll->action($admin, $trolled);
@@ -23,9 +19,5 @@ class TrollManager {
 				$troll->action($admin, $trolled);
 			}
 		}
-	}
-
-	public function getPlugin(): Loader {
-		return $this->plugin;
 	}
 }
