@@ -4,6 +4,7 @@ api: 5.0.0
 author: scher470
 main: scher\trollxd\Loader
 
+#maybe OP?
 permissions:
   trollxd.command.permission:
     default: false
