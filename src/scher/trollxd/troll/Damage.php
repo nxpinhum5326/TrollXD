@@ -8,12 +8,7 @@ use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\player\Player;
 
 class Damage extends Troll {
-	private int $damage;
-
-	public function __construct(
-		int $damage) {
-		$this->damage = $damage;
-	}
+	public const DAMAGE = 1;
 
 	public function action(Player $admin, Player $trolled): void {
 		parent::action($admin, $trolled);
@@ -23,7 +18,7 @@ class Damage extends Troll {
 	}
 
 	public function getDamage(): int {
-		return $this->damage ?? 1;
+		return self::DAMAGE;
 	}
 
 	public function getName(): string {
