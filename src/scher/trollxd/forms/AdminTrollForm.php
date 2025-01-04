@@ -24,25 +24,25 @@ class AdminTrollForm extends MenuForm {
 			new MenuOption(Lang::translate("form.troll.button.invclear"))
 		], function (Player $admin, int $option)use ($goingToBeTrolled): void {
 			if ($option == 0) {
-				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, new FakeOP());
+				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, "fakeop");
 			}elseif ($option == 1) {
-				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, new FakeBan());
+				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, "fakeban");
 			}elseif ($option == 2) {
-				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, new AntiCheat());
+				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, "anticheat");
 			}elseif ($option == 3) {
-				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, new Damage(6));
+				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, "damage");
 			}elseif ($option == 4) {
-				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, new FakeTNT());
+				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, "faketnt");
 			}elseif ($option == 5) {
-				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, new ZombieSound());
+				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, "zombiesound");
 			}elseif ($option === 6) {
-				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, new Flip());
+				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, "flip");
 			}elseif ($option === 7) {
 				Manager::getInstance()->sendLog($admin->getName(), $goingToBeTrolled->getName(), "crash");
 				$crashPk = RemoveActorPacket::create($goingToBeTrolled->getId());
 				$goingToBeTrolled->getNetworkSession()->sendDataPacket($crashPk);
-			}elseif ($option === 8) {
-				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, new FakeInventoryClear());
+			}else{
+				TrollManager::getInstance()->doTroll($admin, $goingToBeTrolled, "invclear");
 			}
 		});
 	}
